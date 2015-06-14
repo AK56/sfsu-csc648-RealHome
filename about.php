@@ -16,7 +16,6 @@ session_start();
     <link rel="icon" href="../../favicon.ico">
 
     <title>About RealHome</title>
-
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="dist/css/bootstrap-table.min.css" rel="stylesheet">

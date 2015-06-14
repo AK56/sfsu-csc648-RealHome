@@ -1,0 +1,100 @@
+<?php
+//this file submits to ./Includes/ProcessCreateEntry.php now
+    if(isset($_SESSION["id"]))
+    {
+        
+        $userID = $_SESSION["id"];
+        echo $userID;
+    } else {
+        echo " Not set ";
+    }
+
+?>
+<!DOCTYPE html>
+  <div class="modal fade" id="ModalCreateEntry" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title">Create Entry</h4>
+        </div>
+		
+		<!-- Just changed the action to "index.php" in <form>
+                     also, in ModalDeleteEntry.php changed the same thing. Now 3 pages ADD, EDIT, Delete works fine.
+                     If we need "Process-CreateEntry.php" let me(Simon) know plz,  I mean we can work on that together. THX! 
+                -->
+        <div class="modal-body">
+		<form class="form-editPage" role="form" enctype=multipart/form-data action="./Includes/ProcessCreateEntry.php" method="POST">
+                                
+                                <div class="form-group">
+                                    <label for="InputAdress">Address: </label>
+                                    <input type="text" class="form-control" name="InputAdress" placeholder="Address">
+                                </div>
+                    
+                                <div class="row">
+                                <div class="form-group col-xs-4">
+                                    <label for="InputCity">City: </label>
+                                    <input type="text" class="form-control" name="InputCity" placeholder="City">
+                                </div>
+                                <div class="form-group col-xs-4">
+                                    <label for="InputState">State: </label>
+                                    <input type="text" class="form-control" name="InputState" placeholder="State">
+                                </div>
+                                <div class="form-group col-xs-4">
+                                    <label for="InputZipCode">ZipCode: </label>
+                                    <input type="number" class="form-control" name="InputZipCode" placeholder="Zip Code">
+                                </div>
+                                
+                                
+                                <div class="form-group form-group col-xs-4">
+                                    <label for="InputPrice">List Price: </label>
+                                    <input type="number" class="form-control" name="InputPrice" placeholder="Price">
+                                </div>
+                                <div class="form-group form-group col-xs-4">
+                                    <label for="InputBeds">Number of Bedrooms: </label>
+                                    <input type="number" class="form-control" name="InputBeds" placeholder="No. of Bedrooms">
+                                </div>
+                                <div class="form-group form-group col-xs-4">
+                                    <label for="InputBaths">Number of Baths: </label>
+                                    <input type="floatval" class="form-control" name="InputBaths" placeholder="No. of Baths">
+                                </div>
+                                </div>
+                                
+                    <div class="row">
+                                <div class="form-group col-xs-6">
+                                    <label for="InputPropertyType">PropertyType: </label>
+                                    <input type="text" class="form-control" name="InputPropertyType" placeholder="Property Type">
+                                </div>
+                                <div class="form-group col-xs-6">
+                                    <label for="InputSize">Size: </label>
+                                    <input type="number" class="form-control" name="InputSize" placeholder="Sq. Feet">
+                                </div>
+                    </div>
+                                <div class="form-group">
+                                    <label for="InputDescription">Description: </label>
+                                    <input type="text" class="form-control" name="InputDescription" placeholder="Property Details">
+                                </div>
+                              
+                                <div class="form-group">
+                                    <label for="InputPhoto">Upload a Property Picture: </label>
+                                    <input type="file" class="form-control" name="image"/>
+                                    <input type="submit" name="submit" value="Upload" />
+                                </div>
+
+                                <button class="btn btn-lg btn-primary" type="submit">Create Entry</button>
+                            </form>
+		
+		<div class="btn-group-vertical">
+
+	
+
+</div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div>

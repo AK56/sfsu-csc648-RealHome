@@ -1,0 +1,177 @@
+<?php
+$servername = "sfsuswe.com";
+$username = "f14g21";
+$password = "21mgrs2014";
+$dbname = "student_f14g21";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$Aid = array();
+$Aaddress = array();
+$AzipCode = array();
+$ApropertyType = array();
+$Acity = array();
+$Asize = array();
+$Aprice = array();
+$Atitle = array();
+$Abeds = array();
+$Abaths = array();
+$Adescription = array();
+$Astate = array();
+$Aphoto = array();
+
+$sql = "SELECT id, address, zipCode, propertyType, city, size, price, title, beds, baths, description, state, photo FROM Entry";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        array_push($Aid, $row["id"]);
+        array_push($Aaddress, $row["address"]);
+        array_push($AzipCode, $row["zipCode"]);
+        array_push($ApropertyType, $row["propertyType"]);
+        array_push($Acity, $row["city"]);
+        array_push($Asize, $row["size"]);
+        array_push($Aprice, $row["price"]);
+        array_push($Atitle, $row["title"]);
+        array_push($Abeds, $row["beds"]);
+        array_push($Abaths, $row["baths"]);
+        array_push($Adescription, $row["description"]);
+        array_push($Astate, $row["state"]);
+        array_push($Aphoto, $row["photo"]);
+        
+        
+        
+    }
+} else {
+    echo "0 results*************";
+}
+$conn->close();
+?>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">Search Results!!!!</div>
+  <div class="panel-body">
+      
+      
+      <div class="container-fluid">
+  
+  
+      <div class="col-md-2">
+         
+
+<script type='text/javascript'>
+<?php
+
+
+$JSAid = json_encode($Aid);
+$JSAaddress = json_encode($Aaddress);
+$JSAzipCode = json_encode($AzipCode);
+$JSApropertyType = json_encode($ApropertyType);
+$JSAcity = json_encode($Acity);
+$JSAsize = json_encode($Asize);
+$JSAprice = json_encode($Aprice);
+$JSAtitle = json_encode($Atitle);
+$JSAbeds = json_encode($Abeds);
+$JSAbaths = json_encode($Abaths);
+$JSAdescription = json_encode($Adescription);
+$JSAstate = json_encode($Astate);
+
+
+echo "var JSAid = ". $JSAid . ";\n";
+echo "var JSAaddress = ". $JSAaddress . ";\n";
+echo "var JSAzipCode = ". $JSAzipCode . ";\n";
+echo "var JSApropertyType = ". $JSApropertyType . ";\n";
+echo "var JSAcity = ". $JSAcity . ";\n";
+echo "var JSAsize = ". $JSAsize . ";\n";
+echo "var JSAprice = ". $JSAprice . ";\n";
+echo "var JSAtitle = ". $JSAtitle . ";\n";
+echo "var JSAbeds = ". $JSAbeds . ";\n";
+echo "var JSAbaths = ". $JSAbaths . ";\n";
+echo "var JSAdescription = ". $JSAdescription . ";\n";
+echo "var JSAstate = ". $JSAstate . ";\n";
+?>
+</script>
+
+
+
+  <div class="list-group" >
+ 
+    <?php
+    for ($i = 0; $i < count($Aid); $i++) {
+     
+   echo ' <script> ';
+  echo '  function myFunction'. $i .'() {  ';
+
+  
+
+echo '   document.getElementById("address1").innerHTML = "Address: '. $Aaddress[$i] .' ";  ';
+echo '   document.getElementById("zipCode1").innerHTML = "Zip: '. $AzipCode[$i] .' ";  ';
+echo '   document.getElementById("propertyType1").innerHTML = "Property Type: '. $ApropertyType[$i] .' ";  ';
+echo '   document.getElementById("city1").innerHTML = "City: '. $Acity[$i] .' ";  ';
+echo '   document.getElementById("size1").innerHTML = "Size: '. $Asize[$i] .' ";  ';
+echo '   document.getElementById("price1").innerHTML = "Price: '. $Aprice[$i] .' ";  ';
+echo '   document.getElementById("title1").innerHTML = "Title: '. $Atitle[$i] .' ";  ';
+echo '   document.getElementById("beds1").innerHTML = "Bedrooms: '. $Abeds[$i] .' ";  ';
+echo '   document.getElementById("baths1").innerHTML = "Bathrooms: '. $Abaths[$i] .' ";  ';
+echo '   document.getElementById("description1").innerHTML = "Description: '. $Adescription[$i] .' ";  ';
+echo '   document.getElementById("state1").innerHTML = "State: '. $Astate[$i] .' ";  ';
+echo ' } ';
+echo ' </script> ';
+    
+    
+    
+echo ' <a href="#" class="list-group-item" onclick="myFunction'. $i .'()"> ';
+echo '  <h4 class="list-group-item-heading">Address: '. $Aaddress[$i] .'</h4> ';
+echo '   <p class="list-group-item-text">Price: '. $Aprice[$i] .'<br>Beds: '. $Abeds[$i] .'<br>Baths:'. $Abaths[$i] .'</p> ';
+
+
+echo ' </a> ';
+  
+  }
+   
+?>  
+      
+      
+      
+</div>
+          
+          
+          
+ <?php include('Includes/functions/mapThis.php'); ?>        
+          
+ </div>            
+    <div class="col-md-10">       
+        <div class="jumbotron">
+  <h1> <p id="address1">Address Placeholder</p></h1>
+  <p id="zipCode1">Zipcode</p>
+  <p id="propertyType1">propertytype</p>
+  <p id="city1">city</p>
+  <p id="size1">size</p>
+  <p id="price1">price</p>
+  <p id="title1">title</p>
+  <p id="beds1">beds</p>
+  <p id="baths1">baths</p>
+  <p id="description1">descript</p>
+  <p id="state1">state</p>
+
+  <? mapThis($Aaddress[0],$Astate[0]); ?>
+</div>
+        
+        
+  </div> 
+</div>
+
+    
+    
+    
+    
+    
+  </div>
+</div>

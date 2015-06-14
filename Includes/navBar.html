@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- This Nav bar Holds the check for logged in or not -->
+<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+         <!-- <a class="navbar-brand" href="#" align ="left"><img src="images/realhomelogo.png"  height="60" width="60"  alt="RealHome logo" ></a>-->
+        </div>
+        <div class="collapse navbar-collapse ">
+               <a href="index.php"><img src="Logo.png"  height="60" width="80"  alt="RealHome logo" ></a>
+               <a href="#ModalSell" data-toggle="modal"><span class="label label-default" style="font-size: 15px">Sell</span></a>
+                    <a href="HardListings.php" ><span class="label label-default" style="font-size: 15px">Buy</span></a>
+                    <a href="about.php" ><span class="label label-default" style="font-size: 15px">About</span></a>
+                    <a href="contact.php" ><span class="label label-default" style="font-size: 15px">Contact</span></a>
+                    <a href="faq.php" ><span class="label label-default" style="font-size: 15px">FAQ's</span></a>         
+                        <ul class="nav navbar-nav pull-right">
+               <!-- The below code should only be shown for a Realtor! -->
+               <!-- Probably use and if state for this or Favored for memeber -->
+               <!-- <li><a href="#ModalViewEntries" data-toggle="modal" >Listings</a></li> -->    
+               
+               
+		<!-- Login Check Start = Show Email if logged in or show login/registration -->
+                            <?php if(isset($_SESSION["email"]))
+                            {
+                                ?>
+                                <li><a href="#ModalManageAccount" data-toggle="modal" ><span class="label label-default" style="font-size: 15px">Manage Account</span></a></li>
+                                <li style="color:white"><span class="label label-default" style="font-size: 15px"><?php
+                                echo" Welcome ";
+                                echo $_SESSION["email"]; 
+                                echo "!";
+                                ?></span></li>
+                                <li><a href="/~f14g21/Includes/loginFiles/logout.php"><span class="label label-default" style="font-size: 15px"><?php echo "Logout" ?></span></a></li><?php
+                            }
+                            else 
+                            {
+                                ?> <li><a href="#ModalLogin" data-toggle="modal"> <span class="label label-default" style="font-size: 15px">Login/Register</span></a></li><?php
+                            } ?>
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div><!-- /.container -->
+    </div><!-- /.navbar -->
+

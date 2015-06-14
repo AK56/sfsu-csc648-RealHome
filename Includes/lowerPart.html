@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-xs-12 col-md-12 col-lg-12">
+        <div class="row">
+            <div class="col-4 col-md-4 col-sm-4 col-lg-4">
+                <ul class="nav nav-sidebar">               
+                    <?php
+                    $con = con2SQL();
+                    $result = mysqli_query($con, "SELECT * FROM Entry");
+                    $count = 0;
+                    while ($row = mysqli_fetch_array($result)) {
+                    if ($count == 0) {
+                    echo "<li class=\"active\">";
+                    } else {
+                    echo "<li>";
+                    }
+
+
+                    echo "    <a href=\" # \">";
+                    echo "        <div class=\"navbar-photo\">";
+                    echo "            <img src=\"images/IMG_4584.JPG\" alt=\"Image2\" class=\"img-thumbnail navbar-thumb\">";
+
+                    echo "            <div class=\"navbar-listing\">";
+
+                    echo "                <h4>Address: " . htmlentities($row["address"]) . "</h4>";
+                    echo "                <h5>City: " . htmlentities($row["city"]) . "</h5>";
+                    echo "                <h5>Price: " . htmlentities($row["price"]) . "</h5>";
+                    echo "                <h5>Sq. Feet: " . htmlentities($row["size"]) . "</h5>";
+                    echo "                <h5>Num. Beds: " . htmlentities($row["beds"]) . "</h5>";
+                    echo "                <h5>Num. Baths: " . htmlentities($row["baths"]) . "</h5>";
+                    echo "            </div>";
+                    echo "        </div>";
+
+                    echo "    </a>";
+                    echo "</li>";
+
+                    $count = $count + 1;
+                    }
+                    mysqli_free_result($result);
+                    endCon2SQL($con);
+                    ?>
+                </ul>
+            </div>
+            <div class="col-4 col-md-4 col-sm-4 col-lg-4">
+                <!-- Google Map-->
+                <?php mapThis('Space+FAU+FL'); ?>
+                <?php mapThis('Space+SFS University+CA'); ?>
+                <!-- /.Google Map-->
+            </div>
+            <!--/span-->
+        </div><!--/row-->
+    </div><!--/span-->
+
+</div><!--/span lower part-->

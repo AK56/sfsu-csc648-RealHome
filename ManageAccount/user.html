@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<div class=".col-md-6">
+    <p class="navbar-text">
+        <?php
+        require_once("prepare.php");
+        $email = getEmail();
+        $phone = getPhone("$email");
+        $name = getName("$email");
+        echo "Welcome: ";
+        echo "$name";
+        echo "<br>";
+        echo "Email: ".$email."<br>";
+        echo "Phone: ".$phone."<br>";
+        ?>
+    </p>
+</div>

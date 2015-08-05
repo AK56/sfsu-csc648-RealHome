@@ -15,7 +15,8 @@ session_start();
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>About RealHome</title>
+    <title>RealHome FAQ</title>
+
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="dist/css/bootstrap-table.min.css" rel="stylesheet">
@@ -33,13 +34,12 @@ session_start();
 
   <body>
    
-    
-  
   <?php include('Includes/navBar.html'); ?>
 
+	
 <!-- include modal -->
 <?php include('Includes/modals/includeModals.php'); ?>
-  
+
     <div class="container-fluid"style="background-color: #f8efc0">
 
       <div class="row row-offcanvas row-offcanvas-right">
@@ -60,44 +60,43 @@ session_start();
           
           </div>
          
-          <div class="row">
-
-              <pre><h3>The RealHome Story</h3>
-
-<b>Innovation meets Influence</b>
- 
-Before Silicon Valley was duly named, its history as the hotbed of innovation was well noted. Our catchy moniker reflects the giants of technology 
-
-who line the corridors of Cupertino, Mountain View, Menlo Park, Palo Alto, and Sunnyvale, the wave of progressive firms that have shaped electronics, 
-
-e-commerce and social interaction all call this place home.
- 
-
-In its truest form, innovation knows no boundaries. It isn’t contained by market or economic trends, it is the consequence of bursting out of great
-
-ideas. That is the sort of idea we have behind RealHome, the innovative idea of having real estate services on the web for the Users all around the 
-
-globe to benefit from it. RealHome is a startup in the industry and is fully committed to establish itself in the Real Estate Market as a online Web 
-
-Application. Its goals are towards its users be it Customers out there looking to buy homes or Realtors, who looking for an innovative way to sell off 
-
-properties in their respective zones. 
-
-
-RealHome is the route both these users will take to connect and work with each other. RealHome is loaded with services for the home buyers to make their 
-
-home buying experience by starting them off with something great, which cannot come anywhere else besides the Home screen of RealHome. 
-
-
-RealHome want its users to feel a sense of appreciation for the time they will input by providing honest information about the Real Estate Market and a 
-
-great User friendly interface for the great process of home buying in one's life.
-
-
-So come Join us and feel like you are in home while you find your way home !
-        </pre>
+          <h3>Frequently Asked Questions:</h3>
+        <b>How does Registration works ?</b>
+        <br>
+        <pre>The registration process is quite smooth and it requires just your name and contact information. You can sign up via 
+your email or can use your facebook or Google credentials.</pre>            
         
-            </div><!--/span-->
+        <b>What is the benefit of registering to RealHome ?</b><br>
+<pre>To use all the services RealHome provides, one has to register. The Registered customer can save any property as his favorite, 
+can also have a personal profile with information on kind of properties he/she interested in, and will receive email once anything 
+related to their interests comes up on RealHome. Also the registered customers can watch on any property and can as well have the 
+contact information of the Realtor associated with that property. All the data of Registered Customer is saved on RealHome.</pre>
+        
+        <b>Do I have to register to contact the Realtor?</b>
+        <br>
+<pre>Yes, as mentioned in the above answer. Only Registered Customers will be able to get Realtor's contact information.</pre>
+        
+        <b>What does "Save Favorite" means on the Property page ?</b>
+        <br>
+<pre>It means that if you really like any property, you can save it in your favorite list of properties. The list is saved for each 
+Registered Customer and you can see that property as long it is on RealHome anytime by logging into your RealHome profile.  </pre>
+        
+        <b>What does "Watch this Unit" means ?</b>
+        <br>
+<pre>It means that you can stay updated when anything regards to the property changes. Like you will be notified via email, if the 
+price, Property status or any essential information about the property changes, which you don't want to miss.</pre>
+        
+        <b>Is my Personal information shared or kept private ?</b>
+        <br>
+<pre>Only your Contact information is shared with the Realtor to whose property you showed interest in. Besides RealHome strictly 
+follows Member Privacy rules and committed to respect the privacy of its members.</pre>
+        
+        <b>How to I start Home Buying Process ?</b>
+        <br>
+<pre>Once you know the property you want to start process of, just contact the Realtor associated with property, and the member of our
+great team of Realtors will take care of you from there.</pre>
+ 
+ 
             
           </div><!--/row-->
         </div><!--/span-->
@@ -107,7 +106,7 @@ So come Join us and feel like you are in home while you find your way home !
 
       <hr>
 
-      <nav class="nav navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+     <nav class="nav navbar navbar-inverse navbar-fixed-bottom" role="navigation">
     <div class="container-fluid" style="margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px;">
         <div class="navbar-header">
           
